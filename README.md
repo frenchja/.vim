@@ -8,39 +8,27 @@ I use the following repository to sync my .vimrc preferences across computers. T
     
         cd ~
         git clone git://github.com/frenchja/.vim.git
-        rm -rf ~/.vim/bundle/*
-        git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-        ln -s ~/.vim/vimrc ~/.vimrc
+        curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+	ln -s ~/.vim/vimrc ~/.vimrc
         
-* From [normal-mode](http://vimdoc.sourceforge.net/htmldoc/intro.html#mode-switching) within MacVim, type the `:BundleInstall!`. 
+* From [normal-mode](http://vimdoc.sourceforge.net/htmldoc/intro.html#mode-switching) within MacVim, type the `:NeoBundleInstall!`. 
                                                                                                                                                       
-[Vundle](https://github.com/gmarik/vundle) will handle the rest of the magic.
+[NeoBundle](https://github.com/Shougo/neobundle.vim) will handle the rest of the magic.
 
 ## Specific Plugins
-### Command-T
-This plugin is is built using Ruby ([see documentation](http://git.wincent.com/command-t.git/blob_plain/HEAD:/doc/command-t.txt)). Therefore, a fresh install will need to:
+### Syntastic
+To use PyFlakes with Syntastic to check your Python syntax, you need to have it installed and in your 
+$PYTHONPATH. 
 
-    cd ~/.vim/bundle/command-t 
-    rake make
-### Vim-LaTeX
-* [MacTeX](http://www.tug.org/mactex/2011/).
+MacPorts: `sudo port install py27-pyflakes`
+PIP: `sudo pip install pyflakes`
+Anaconda: `conda install pyflakes`
 
-### Vim-R
-* [R](http://www.r-project.org/)
+## NeoComplete
+NeoComplete requires "if_lua" enabled Vim(7.3.885 or above).  The version that ships with OS X 10.9 is too old, 
+so use Homebrew to install a newer version:
 
-To use Vim-R with SnipMate, you need to create a symbolic link between the Vim-R 
-snippet and the snipmate-snippets bundle ([see here](http://blog.binfalse.de/wp-content/uploads/2010/12/vim-r-plugin-101217.html)).
+```bash
+brew install vim --with-lua
+```
 
-    ls -s ~/.vim/bundle/Vim-R-plugin/r-plugin/r.snippets ~/.vim/bundle/snipmate-snippets/snippets/
-
-### PyDiction and SnipMate
-
-### PyFlakes
-To use PyFlakes to check your Python syntax, you need to have it installed and in your 
-$PYTHONPATH. On OS X, something like `sudo port install py26-pyflakes` should 
-work.
-
-In Terminal:
-
-    cd ~/.vim/bundle/pyflakes-vim
-    git submodule update --init --recursive

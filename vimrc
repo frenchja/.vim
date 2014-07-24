@@ -13,6 +13,7 @@ if has('vim_starting')
  NeoBundleFetch 'Shougo/neobundle.vim'
 
  " My Bundles here:
+ NeoBundle 'Shougo/neocomplete'
  NeoBundle 'Shougo/neosnippet.vim'
  NeoBundle 'Shougo/neosnippet-snippets'
  NeoBundle 'tpope/vim-fugitive'
@@ -34,10 +35,12 @@ if has('vim_starting')
  NeoBundleCheck
 
  set number
+ set modeline
  syntax on
  set background=light
  colorscheme solarized
  autocmd vimenter * if !argc() | NERDTree | endif
-
+ " For NeoComplete
+ let g:neocomplete#enable_at_startup = 1
  " Markdown
  au BufRead,BufNewFile *.md set filetype=markdown
