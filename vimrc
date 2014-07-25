@@ -39,7 +39,14 @@ if has('vim_starting')
  syntax on
  set background=light
  colorscheme solarized
- autocmd vimenter * if !argc() | NERDTree | endif
+ 
+ " NerdTREE
+ autocmd StdinReadPre * let s:std_in=1
+ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+ 
+ " Syntastic
+ let g:syntastic_check_on_open = 1
+ 
  " For NeoComplete
  let g:neocomplete#enable_at_startup = 1
  " Markdown
