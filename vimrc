@@ -25,7 +25,7 @@ if has('vim_starting')
  NeoBundle 'bling/vim-airline'
  " You can specify revision/branch/tag.
  NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
+ NeoBundle 'junegunn/limelight.vim'
  call neobundle#end()
 
  " Required:
@@ -65,3 +65,6 @@ if has('vim_starting')
  augroup END	 
  " Markdown
  au BufRead,BufNewFile *.md set filetype=markdown
+ " Limelight
+ let g:limelight_conceal_ctermfg = 'gray'
+ let g:limelight_conceal_ctermfg = 240
