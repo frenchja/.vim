@@ -23,11 +23,11 @@ $PYTHONPATH.
 	* PIP: `sudo pip install pyflakes`
 	* Anaconda: `conda install pyflakes`
 
-## NeoComplete
+### NeoComplete
 NeoComplete requires `"if_lua"` enabled Vim(7.3.885 or above).  The version that ships with OS X 10.9 is too old, 
 so use [Homebrew](http://brew.sh/) to install a newer version:
 
 ```bash
 brew install vim --with-lua
 ```
-
+### Air
