@@ -6,10 +6,12 @@ I use the following repository to sync my .vimrc preferences across computers. T
 * Download [MacVim](https://github.com/b4winckler/macvim/releases)
 * Download [Git](http://git-scm.com/downloads), although it's rather implausible that you'd be on this site if you didn't have it.
 * In Terminal, issue the following:
-	1. `cd ~`
-	2. `git clone git://github.com/frenchja/.vim.git`
-	3. `curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh`
-	4. `ln -s ~/.vim/vimrc ~/.vimrc`
+```bash
+cd ~
+git clone git://github.com/frenchja/.vim.git
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+ln -s ~/.vim/vimrc ~/.vimrc
+```
         
 * From [normal-mode](http://vimdoc.sourceforge.net/htmldoc/intro.html#mode-switching) within MacVim, type the `:NeoBundleInstall!`. 
                                                                                                                                                       
