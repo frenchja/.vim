@@ -26,6 +26,7 @@ if has('vim_starting')
  " You can specify revision/branch/tag.
  NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
  NeoBundle 'junegunn/limelight.vim'
+ NeoBundle 'moll/vim-node'
  call neobundle#end()
 
  " Required:
