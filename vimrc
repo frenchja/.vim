@@ -25,6 +25,7 @@ if has('vim_starting')
  NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
  NeoBundle 'junegunn/limelight.vim'
  NeoBundle 'moll/vim-node'
+ NeoBundle 'ervandew/supertab'
  call neobundle#end()
 
  " Required:
@@ -40,6 +41,8 @@ if has('vim_starting')
  colorscheme solarized
  let g:solarized_termcolors=256
  
+ " Python-mode incompatible with Jedi-vim
+ let g:pymode_rope = 0
  " Airline
  set laststatus=2
  let g:airline_powerline_fonts = 1
@@ -54,7 +57,7 @@ if has('vim_starting')
  
  augroup Complete
  	autocmd!	
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType python setlocal omnifunc=jedi#completions
  	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
  	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
  	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
