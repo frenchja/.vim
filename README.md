@@ -5,6 +5,11 @@ I use the following repository to sync my .vimrc preferences across computers. T
 ## Usage
 * Download [MacVim](https://github.com/b4winckler/macvim/releases)
 * Download [Git](http://git-scm.com/downloads), although it's rather implausible that you'd be on this site if you didn't have it.
+* Alternatively, you can install Vim using [Homebrew](http://brew.sh/):
+```bash
+brew install vim --with-luajit --override-system-vi
+```
+
 * In Terminal, issue the following:
 ```bash
 cd ~
@@ -26,16 +31,18 @@ $PYTHONPATH.
 * PIP: `sudo pip install pyflakes`
 * Anaconda: `conda install pyflakes`
 
-### NeoComplete
-NeoComplete requires `"if_lua"` enabled Vim(7.3.885 or above).  The version that ships with OS X 10.9 is too old, 
-so use [Homebrew](http://brew.sh/) to install a newer version:
-
-```bash
-brew install vim --with-lua
-```
 ### Air
-In order to use the Air statusbar, you need to install the Powerline fonts, which give access to special symbols.  Rather than installing the patched fonts, it appears that using `pip` works equally well:
+In order to use the Air statusbar, you need to install the Powerline fonts, which give access to special symbols.  Rather than installing the [patched fonts](https://github.com/powerline/fonts), it appears that using `pip` works equally well:
 
 ```bash
 pip install --user git+git://github.com/Lokaltog/powerline
 ```
+
+### Jedi
+For Anaconda:
+```bash
+conda pipbuild jedi
+```
+
+## Notes
+If using Solarized colors for Terminal.app and you're on OS X >= 10.7, remember to use the [patched terminal theme](https://github.com/tomislav/osx-terminal.app-colors-solarized).

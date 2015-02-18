@@ -13,9 +13,6 @@ if has('vim_starting')
  NeoBundleFetch 'Shougo/neobundle.vim'
 
  " My Bundles here:
- NeoBundle 'Shougo/neocomplete'
- NeoBundle 'Shougo/neosnippet.vim'
- NeoBundle 'Shougo/neosnippet-snippets'
  NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'kien/ctrlp.vim'
  NeoBundle 'flazz/vim-colorschemes'
@@ -23,6 +20,7 @@ if has('vim_starting')
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'bling/vim-airline'
+ NeoBundle 'davidhalter/jedi-vim'
  " You can specify revision/branch/tag.
  NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
  NeoBundle 'junegunn/limelight.vim'
@@ -39,8 +37,9 @@ if has('vim_starting')
  set number
  set modeline
  syntax on
- set background=dark
  colorscheme solarized
+ let g:solarized_termcolors=256
+ 
  " Airline
  set laststatus=2
  let g:airline_powerline_fonts = 1
@@ -53,10 +52,6 @@ if has('vim_starting')
  " Syntastic
  let g:syntastic_check_on_open = 1
  
- " For NeoComplete
- let g:acp_enableAtStartup = 0
- let g:neocomplete#enable_smart_case = 1
- let g:neocomplete#enable_at_startup = 1
  augroup Complete
  	autocmd!	
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -69,3 +64,11 @@ if has('vim_starting')
  " Limelight
  let g:limelight_conceal_ctermfg = 'gray'
  let g:limelight_conceal_ctermfg = 240
+
+ " Non-GNU Systems
+ let g:make = 'gmake'
+ if system('uname -o') =~ '^GNU/'
+ 	let g:make = 'make'
+ endif
+ NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
+
