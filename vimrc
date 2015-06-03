@@ -28,6 +28,7 @@ if has('vim_starting')
  NeoBundle 'ervandew/supertab'
  NeoBundle 'elzr/vim-json'
  NeoBundle 'rust-lang/rust.vim'
+ NeoBundle 'vim-ruby/vim-ruby'
  call neobundle#end()
 
  " Required:
